@@ -1,29 +1,27 @@
 import string
 import random
 
-def generatePassword(len):
+
+# there is probably a better way to do this
+def generatePassword(len: int) -> str:
     output = []
-    badCheckSym = 0
-    badCheckLow = 0
-    badCheckUpp = 0
-
     for i in range(len):
-        letter = random.choice(string.ascii_letters + string.punctuation)
-        output.append(letter)
+        letter = random.choice(string.ascii_letters + string.punctuation) # random chooses from all english ascii letters and punctuation marks
+        output.append(letter) 
     
-    random.shuffle(output)
-    return ''.join(output)
+    random.shuffle(output) # shuffle randomly for no reason
+    return ''.join(output) # convert to string and return result
 
 
 
-
+# takes file path, site name, user name, and password length for the generate password function
 def managePasswords(file: str,site: str, username: str, passwordlength: int):
-    f = open(file, 'a')
+    f = open(file, 'a') # open in append mode
     f.write(f'Site: {site}   Username: {username}    Password: {generatePassword(passwordlength)}\n')
     f.close()
 
 
 
-managePasswords(r"C:\Users\atarashi\Documents\Projects\Python\WordParser\k.txt","Youtube.com", "Ali", 5)
+# example usage: managePasswords("passwords.txt","Youtube.com", "Ali", 10) 
 
 

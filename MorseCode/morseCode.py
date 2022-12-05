@@ -12,7 +12,7 @@ def makeMorse(strng: str):
         '0': '-----',  '1': '.----',  '2': '..---',
         '3': '...--',  '4': '....-',  '5': '.....',
         '6': '-....',  '7': '--...',  '8': '---..',
-        '9': '----.' 
+        '9': '----.',  ' ': ' '
         }
     return ' '.join([forward[i] for i in strng.upper()])
 
@@ -28,9 +28,10 @@ def undoMorse(strng: str): # sep each with space plz
                  '.-..': 'L', '.....': '5', '...--': '3', '-.--': 'Y',
                  '-....': '6', '.--': 'W', '....': 'H', '-.': 'N', '.-.': 'R',
                  '-...': 'B', '---..': '8', '--..': 'Z', '-..': 'D', '--.-': 'Q',
-                 '--.': 'G', '--': 'M', '..-': 'U', '.-': 'A', '...': 'S', '.----': '1'}
+                 '--.': 'G', '--': 'M', '..-': 'U', '.-': 'A', '...': 'S', '.----': '1', '': ' '}
     return ''.join([reversed[i] for i in strng.split(" ")])
 
 
 
-print(undoMorse(makeMorse("sos")))
+#Example: print(undoMorse(".... . .-.. .-.. --- .-- --- .-. .-.. -..")) returns "HELLOWORLD"
+#Example: print(makeMorse("Hello World")) returns ".... . .-.. .-.. ---   .-- --- .-. .-.. -.."
