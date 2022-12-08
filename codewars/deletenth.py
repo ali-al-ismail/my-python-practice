@@ -1,3 +1,7 @@
+# https://www.codewars.com/kata/554ca54ffa7d91b236000023/
+
+# delete element if count of specific element exceeds n
+# strange solution but it works
 def deleteNth(lst,n):
     for i,j in enumerate(lst):
         for k in range(len(lst)):
@@ -6,6 +10,3 @@ def deleteNth(lst,n):
     return lst
 
 
-
-
-print(deleteNth([1,1,3,3,7,2,2,2,2], 3))
